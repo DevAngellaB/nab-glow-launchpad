@@ -52,6 +52,12 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
+				// N.A.B Glow Brand Colors
+				'glow-pink': 'hsl(var(--glow-pink))',
+				'glow-blue': 'hsl(var(--glow-blue))',
+				'glow-cream': 'hsl(var(--glow-cream))',
+				'text-soft': 'hsl(var(--text-soft))',
+				'text-primary': 'hsl(var(--text-primary))',
 				sidebar: {
 					DEFAULT: 'hsl(var(--sidebar-background))',
 					foreground: 'hsl(var(--sidebar-foreground))',
@@ -66,7 +72,23 @@ export default {
 			borderRadius: {
 				lg: 'var(--radius)',
 				md: 'calc(var(--radius) - 2px)',
-				sm: 'calc(var(--radius) - 4px)'
+				sm: 'calc(var(--radius) - 4px)',
+				'xl': '1rem',
+				'2xl': '1.5rem',
+				'3xl': '2rem'
+			},
+			backgroundImage: {
+				'gradient-glow': 'var(--gradient-glow)',
+				'gradient-soft': 'var(--gradient-soft)',
+				'gradient-header': 'var(--gradient-header)',
+			},
+			boxShadow: {
+				'glow': 'var(--shadow-glow)',
+				'soft': 'var(--shadow-soft)',
+				'card': 'var(--shadow-card)',
+			},
+			fontFamily: {
+				'sans': ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
 			},
 			keyframes: {
 				'accordion-down': {

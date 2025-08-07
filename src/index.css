@@ -8,33 +8,57 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* N.A.B Glow Brand Colors - Soft & Feminine */
+    --background: 0 0% 99%;
+    --foreground: 330 15% 25%;
 
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 330 15% 25%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 330 15% 25%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Pastel Pink Primary */
+    --primary: 340 100% 85%;
+    --primary-foreground: 330 15% 25%;
+    
+    /* Soft Light Blue Secondary */
+    --secondary: 200 100% 92%;
+    --secondary-foreground: 330 15% 25%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --muted: 210 20% 96%;
+    --muted-foreground: 330 8% 55%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
-
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    /* Gentle accent */
+    --accent: 320 60% 95%;
+    --accent-foreground: 330 15% 25%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 320 30% 90%;
+    --input: 320 30% 94%;
+    --ring: 340 100% 85%;
+
+    /* Custom Brand Tokens */
+    --glow-pink: 340 100% 85%;
+    --glow-blue: 200 100% 92%;
+    --glow-cream: 30 20% 98%;
+    --text-soft: 330 8% 55%;
+    --text-primary: 330 15% 25%;
+    
+    /* Beautiful Gradients */
+    --gradient-glow: linear-gradient(135deg, hsl(340 100% 90%), hsl(200 100% 94%));
+    --gradient-soft: linear-gradient(180deg, hsl(0 0% 100%), hsl(320 60% 98%));
+    --gradient-header: linear-gradient(135deg, hsl(340 100% 95%), hsl(200 100% 96%));
+    
+    /* Glowing Effects */
+    --shadow-glow: 0 4px 20px hsl(340 100% 85% / 0.3);
+    --shadow-soft: 0 2px 12px hsl(320 60% 80% / 0.15);
+    --shadow-card: 0 4px 16px hsl(320 40% 70% / 0.1);
+    
+    /* Smooth Transitions */
+    --transition-glow: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 
     --radius: 0.5rem;
 
@@ -56,33 +80,43 @@ All colors MUST be HSL.
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+    /* Dark mode with softer glow theme */
+    --background: 330 20% 8%;
+    --foreground: 320 60% 95%;
 
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
+    --card: 330 15% 12%;
+    --card-foreground: 320 60% 95%;
 
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 330 15% 12%;
+    --popover-foreground: 320 60% 95%;
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    --primary: 340 80% 70%;
+    --primary-foreground: 330 20% 8%;
 
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 200 60% 20%;
+    --secondary-foreground: 320 60% 95%;
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+    --muted: 330 15% 15%;
+    --muted-foreground: 320 30% 70%;
 
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    --accent: 330 15% 15%;
+    --accent-foreground: 320 60% 95%;
 
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
+    --border: 330 15% 18%;
+    --input: 330 15% 18%;
+    --ring: 340 80% 70%;
+    
+    /* Dark mode gradients */
+    --gradient-glow: linear-gradient(135deg, hsl(340 80% 25%), hsl(200 60% 25%));
+    --gradient-soft: linear-gradient(180deg, hsl(330 20% 8%), hsl(330 15% 12%));
+    --gradient-header: linear-gradient(135deg, hsl(340 60% 15%), hsl(200 40% 15%));
+    
+    --shadow-glow: 0 4px 20px hsl(340 80% 70% / 0.2);
+    --shadow-soft: 0 2px 12px hsl(320 60% 40% / 0.15);
+    --shadow-card: 0 4px 16px hsl(320 40% 20% / 0.2);
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;
@@ -101,5 +135,29 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    line-height: 1.6;
+  }
+  
+  .glow-effect {
+    box-shadow: var(--shadow-glow);
+    transition: var(--transition-glow);
+  }
+  
+  .glow-effect:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px hsl(340 100% 85% / 0.4);
+  }
+  
+  .gradient-bg {
+    background: var(--gradient-glow);
+  }
+  
+  .soft-gradient {
+    background: var(--gradient-soft);
+  }
+  
+  .text-glow {
+    text-shadow: 0 2px 8px hsl(340 100% 85% / 0.3);
   }
 }
