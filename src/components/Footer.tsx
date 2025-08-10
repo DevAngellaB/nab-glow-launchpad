@@ -1,3 +1,5 @@
+import { handleAnchorClick } from "@/utils/smoothScroll";
+
 const Footer = () => {
   return (
     <footer className="bg-text-primary text-background py-12 px-4">
@@ -17,10 +19,42 @@ const Footer = () => {
           <div>
             <h4 className="font-bold mb-4 text-glow-pink">Quick Links</h4>
             <ul className="space-y-2 text-background/80">
-              <li><a href="#about" className="hover:text-glow-pink transition-colors">About Nicole</a></li>
-              <li><a href="#products" className="hover:text-glow-pink transition-colors">Our Products</a></li>
-              <li><a href="#newsletter" className="hover:text-glow-pink transition-colors">Join Waitlist</a></li>
-              <li><a href="#shop" className="hover:text-glow-pink transition-colors">Glow Kits</a></li>
+              <li>
+                <a 
+                  href="#about" 
+                  className="hover:text-glow-pink transition-colors cursor-pointer"
+                  onClick={(e) => handleAnchorClick(e, 'about')}
+                >
+                  About Nicole
+                </a>
+              </li>
+              <li>
+                <a 
+                  href="#products" 
+                  className="hover:text-glow-pink transition-colors cursor-pointer"
+                  onClick={(e) => handleAnchorClick(e, 'products')}
+                >
+                  Our Products
+                </a>
+              </li>
+              <li>
+                <a 
+                  href="#newsletter" 
+                  className="hover:text-glow-pink transition-colors cursor-pointer"
+                  onClick={(e) => handleAnchorClick(e, 'newsletter')}
+                >
+                  Join Waitlist
+                </a>
+              </li>
+              <li>
+                <a 
+                  href="#shop" 
+                  className="hover:text-glow-pink transition-colors cursor-pointer"
+                  onClick={(e) => handleAnchorClick(e, 'shop')}
+                >
+                  Glow Kits
+                </a>
+              </li>
             </ul>
           </div>
           
@@ -43,7 +77,11 @@ const Footer = () => {
                 </a>
               </li>
               <li>
-                <a href="#newsletter" className="hover:text-glow-blue transition-colors">
+                <a 
+                  href="#newsletter" 
+                  className="hover:text-glow-blue transition-colors cursor-pointer"
+                  onClick={(e) => handleAnchorClick(e, 'newsletter')}
+                >
                   Newsletter
                 </a>
               </li>

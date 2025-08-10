@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import { smoothScrollTo } from "@/utils/smoothScroll";
 import heroImage from "@/assets/hero-glow.jpg";
 
 const HeroSection = () => {
@@ -34,12 +35,44 @@ const HeroSection = () => {
         </div>
         
         <div className="space-y-4 sm:space-y-0 sm:space-x-4 sm:flex sm:justify-center">
-          <Button variant="hero" size="xl" className="w-full sm:w-auto">
+          <Button 
+            variant="hero" 
+            size="xl" 
+            className="w-full sm:w-auto"
+            onClick={() => smoothScrollTo('newsletter')}
+          >
             Join the Glow List
           </Button>
-          <Button variant="soft" size="xl" className="w-full sm:w-auto">
-            Follow Our Journey
+          <Button 
+            variant="soft" 
+            size="xl" 
+            className="w-full sm:w-auto"
+            onClick={() => smoothScrollTo('about')}
+          >
+            Learn About Nicole
           </Button>
+        </div>
+        
+        {/* Quick Navigation */}
+        <div className="mt-8 flex justify-center space-x-6 text-sm">
+          <button 
+            onClick={() => smoothScrollTo('products')} 
+            className="text-text-soft hover:text-primary transition-colors underline underline-offset-4"
+          >
+            Our Products
+          </button>
+          <button 
+            onClick={() => smoothScrollTo('shop')} 
+            className="text-text-soft hover:text-primary transition-colors underline underline-offset-4"
+          >
+            Glow Kits
+          </button>
+          <button 
+            onClick={() => smoothScrollTo('about')} 
+            className="text-text-soft hover:text-primary transition-colors underline underline-offset-4"
+          >
+            About
+          </button>
         </div>
         
         <div className="mt-12 text-center">

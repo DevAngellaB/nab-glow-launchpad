@@ -9,10 +9,18 @@ const Index = () => {
   return (
     <div className="min-h-screen">
       <HeroSection />
-      <ProductCategories />
-      <AboutSection />
-      <ShopPlaceholder />
-      <NewsletterSection />
+      <div id="products">
+        <ProductCategories />
+      </div>
+      <div id="about">
+        <AboutSection />
+      </div>
+      <div id="shop">
+        <ShopPlaceholder />
+      </div>
+      <div id="newsletter">
+        <NewsletterSection />
+      </div>
       <Footer />
     </div>
   );
