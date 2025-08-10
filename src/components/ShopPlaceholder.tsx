@@ -1,7 +1,34 @@
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import { smoothScrollTo } from "@/utils/smoothScroll";
+import { useToast } from "@/hooks/use-toast";
 
 const ShopPlaceholder = () => {
+  const { toast } = useToast();
+  
+  const handleGetNotified = (product: string) => {
+    // Store product interest
+    const productInterests = JSON.parse(localStorage.getItem('productInterests') || '[]');
+    const newInterest = {
+      product,
+      timestamp: new Date().toISOString()
+    };
+    
+    if (!productInterests.some((interest: any) => interest.product === product)) {
+      productInterests.push(newInterest);
+      localStorage.setItem('productInterests', JSON.stringify(productInterests));
+    }
+    
+    toast({
+      title: `${product} added to your wishlist! ✨`,
+      description: "Join our waitlist to get notified when it launches!",
+    });
+    
+    setTimeout(() => {
+      smoothScrollTo('newsletter');
+    }, 1500);
+  };
+  
   return (
     <section className="py-20 px-4 bg-background">
       <div className="max-w-6xl mx-auto">
@@ -28,7 +55,11 @@ const ShopPlaceholder = () => {
                 Perfect for beginners. Everything you need to start your glow journey.
               </p>
               <div className="text-3xl font-bold text-primary mb-4">$29</div>
-              <Button variant="glow" className="w-full mb-4">
+              <Button 
+                variant="glow" 
+                className="w-full mb-4"
+                onClick={() => handleGetNotified('Starter Glow Kit')}
+              >
                 Get Notified
               </Button>
               <p className="text-xs text-text-soft">Available January 2026</p>
@@ -51,7 +82,11 @@ const ShopPlaceholder = () => {
                 Full skincare routine plus body care and digital wellness tools.
               </p>
               <div className="text-3xl font-bold text-primary mb-4">$79</div>
-              <Button variant="glow" className="w-full mb-4">
+              <Button 
+                variant="glow" 
+                className="w-full mb-4"
+                onClick={() => handleGetNotified('Complete Glow System')}
+              >
                 Get Notified
               </Button>
               <p className="text-xs text-text-soft">Available January 2026</p>
@@ -74,7 +109,11 @@ const ShopPlaceholder = () => {
                 Personalized routine based on your skin type and wellness goals.
               </p>
               <div className="text-3xl font-bold text-primary mb-4">$49</div>
-              <Button variant="glow" className="w-full mb-4">
+              <Button 
+                variant="glow" 
+                className="w-full mb-4"
+                onClick={() => handleGetNotified('Custom Glow Plan')}
+              >
                 Get Notified
               </Button>
               <p className="text-xs text-text-soft">Available January 2026</p>
@@ -95,7 +134,17 @@ const ShopPlaceholder = () => {
                 Join our waitlist now and get <span className="font-bold text-primary">20% off</span> your first order 
                 plus free shipping when we launch!
               </p>
-              <Button variant="hero" size="lg">
+              <Button 
+                variant="hero" 
+                size="lg"
+                onClick={() => {
+                  toast({
+                    title: "20% Discount Reserved! 🎉",
+                    description: "Complete your signup below to secure your early bird discount!",
+                  });
+                  setTimeout(() => smoothScrollTo('newsletter'), 1000);
+                }}
+              >
                 Claim Your Discount
               </Button>
             </div>

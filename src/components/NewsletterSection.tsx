@@ -13,15 +13,49 @@ const NewsletterSection = () => {
     e.preventDefault();
     setIsSubmitting(true);
     
-    // Simulate API call for now
-    setTimeout(() => {
-      toast({
-        title: "Welcome to the Glow List! ✨",
-        description: "You'll be the first to know when we launch on January 1st, 2026!",
+    try {
+      // Submit to Netlify Forms
+      const formData = new FormData();
+      formData.append('email', email);
+      formData.append('form-name', 'waitlist');
+      formData.append('timestamp', new Date().toISOString());
+      
+      const response = await fetch('/', {
+        method: 'POST',
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: new URLSearchParams(formData as any).toString()
       });
-      setEmail("");
+      
+      if (response.ok) {
+        toast({
+          title: "Welcome to the Glow List! ✨",
+          description: "You'll be the first to know when we launch on January 1st, 2026!",
+        });
+        setEmail("");
+        
+        // Store in localStorage as backup
+        const existingEmails = JSON.parse(localStorage.getItem('waitlistEmails') || '[]');
+        if (!existingEmails.includes(email)) {
+          existingEmails.push({
+            email,
+            timestamp: new Date().toISOString(),
+            source: 'newsletter'
+          });
+          localStorage.setItem('waitlistEmails', JSON.stringify(existingEmails));
+        }
+      } else {
+        throw new Error('Failed to submit');
+      }
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      toast({
+        title: "Oops! Something went wrong 😔",
+        description: "Please try again or email us directly at hello@nabglow.com",
+        variant: "destructive"
+      });
+    } finally {
       setIsSubmitting(false);
-    }, 1000);
+    }
   };
 
   return (

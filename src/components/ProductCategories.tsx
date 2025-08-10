@@ -1,5 +1,7 @@
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import { smoothScrollTo } from "@/utils/smoothScroll";
+import { useToast } from "@/hooks/use-toast";
 import skincareImage from "@/assets/skincare-collection.jpg";
 import digitalWellnessImage from "@/assets/digital-wellness.jpg";
 
@@ -28,6 +30,33 @@ const categories = [
 ];
 
 const ProductCategories = () => {
+  const { toast } = useToast();
+  
+  const handleGetNotified = (category: string) => {
+    // Store interest in specific category
+    const interests = JSON.parse(localStorage.getItem('categoryInterests') || '[]');
+    const newInterest = {
+      category,
+      timestamp: new Date().toISOString()
+    };
+    
+    if (!interests.some((interest: any) => interest.category === category)) {
+      interests.push(newInterest);
+      localStorage.setItem('categoryInterests', JSON.stringify(interests));
+    }
+    
+    // Show feedback and redirect to main signup
+    toast({
+      title: `Interested in ${category}! 💕`,
+      description: "Let's get you signed up for the full Glow List!",
+    });
+    
+    // Scroll to newsletter signup
+    setTimeout(() => {
+      smoothScrollTo('newsletter');
+    }, 1500);
+  };
+  
   return (
     <section className="py-20 px-4 bg-gradient-soft">
       <div className="max-w-6xl mx-auto">
@@ -78,7 +107,11 @@ const ProductCategories = () => {
                   ))}
                 </ul>
                 
-                <Button variant="glow" className="w-full">
+                <Button 
+                  variant="glow" 
+                  className="w-full"
+                  onClick={() => handleGetNotified(category.title)}
+                >
                   Get Notified
                 </Button>
               </div>
