@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
+  <defs>
+    <linearGradient id="glowGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f9c2e7;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#b8e6ff;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background circle -->
+  <circle cx="16" cy="16" r="15" fill="url(#glowGradient)" stroke="#e91e63" stroke-width="1"/>
+  
+  <!-- Large N for NAB -->
+  <text x="16" y="22" fill="#2d1b45" font-family="Arial, sans-serif" font-weight="bold" font-size="18" text-anchor="middle">N</text>
+  
+  <!-- Small sparkles -->
+  <circle cx="8" cy="8" r="1.5" fill="#ffffff" opacity="0.9"/>
+  <circle cx="24" cy="8" r="1" fill="#ffffff" opacity="0.7"/>
+  <circle cx="8" cy="24" r="1" fill="#ffffff" opacity="0.7"/>
+  <circle cx="24" cy="24" r="1.5" fill="#ffffff" opacity="0.9"/>
+</svg>
