@@ -1,17 +1,10 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" fill="none">
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
   <defs>
     <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#f9c2e7;stop-opacity:1" />
-      <stop offset="50%" style="stop-color:#e8a4d8;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#b8e6ff;stop-opacity:1" />
+      <stop offset="0%" style="stop-color:#f9c2e7" />
+      <stop offset="50%" style="stop-color:#e8a4d8" />
+      <stop offset="100%" style="stop-color:#b8e6ff" />
     </linearGradient>
-    <filter id="textGlow" x="-50%" y="-50%" width="200%" height="200%">
-      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
-      <feMerge> 
-        <feMergeNode in="coloredBlur"/>
-        <feMergeNode in="SourceGraphic"/> 
-      </feMerge>
-    </filter>
   </defs>
   
   <!-- Background -->
@@ -24,7 +17,7 @@
   <circle cx="1000" cy="150" r="50" fill="#ffffff" opacity="0.12"/>
   
   <!-- Main brand text -->
-  <g text-anchor="middle" font-family="Arial, sans-serif" font-weight="bold" filter="url(#textGlow)">
+  <g text-anchor="middle" font-family="Arial, sans-serif" font-weight="bold">
     <!-- NAB -->
     <text x="600" y="220" font-size="120" fill="#2d1b45" opacity="0.9">N.A.B</text>
     <!-- Glow -->
