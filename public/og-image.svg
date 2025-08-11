@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" fill="none">
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f9c2e7;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#e8a4d8;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#b8e6ff;stop-opacity:1" />
+    </linearGradient>
+    <filter id="textGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge> 
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/> 
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bgGradient)"/>
+  
+  <!-- Decorative circles -->
+  <circle cx="100" cy="100" r="60" fill="#ffffff" opacity="0.1"/>
+  <circle cx="1100" cy="530" r="80" fill="#ffffff" opacity="0.15"/>
+  <circle cx="200" cy="500" r="40" fill="#ffffff" opacity="0.2"/>
+  <circle cx="1000" cy="150" r="50" fill="#ffffff" opacity="0.12"/>
+  
+  <!-- Main brand text -->
+  <g text-anchor="middle" font-family="Arial, sans-serif" font-weight="bold" filter="url(#textGlow)">
+    <!-- NAB -->
+    <text x="600" y="220" font-size="120" fill="#2d1b45" opacity="0.9">N.A.B</text>
+    <!-- Glow -->
+    <text x="600" y="340" font-size="100" fill="#2d1b45" opacity="0.8">Glow</text>
+  </g>
+  
+  <!-- Tagline -->
+  <text x="600" y="420" text-anchor="middle" font-family="Arial, sans-serif" font-size="32" fill="#2d1b45" opacity="0.7">
+    Nourish. Align. Blossom.
+  </text>
+  
+  <!-- Launch date -->
+  <text x="600" y="480" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" fill="#2d1b45" opacity="0.6">
+    Launching January 1st, 2026
+  </text>
+  
+  <!-- Website -->
+  <text x="600" y="520" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" fill="#2d1b45" opacity="0.5">
+    devangellab.github.io/nab-glow-launchpad
+  </text>
+  
+  <!-- Sparkles -->
+  <g fill="#ffffff" opacity="0.8">
+    <circle cx="400" cy="180" r="3"/>
+    <circle cx="800" cy="280" r="4"/>
+    <circle cx="350" cy="350" r="2.5"/>
+    <circle cx="850" cy="200" r="3.5"/>
+    <circle cx="500" cy="450" r="2"/>
+    <circle cx="700" cy="380" r="3"/>
+  </g>
+</svg>
